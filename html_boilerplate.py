@@ -1,7 +1,11 @@
 import os
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+html_path = os.path.join(__location__, 'html.txt')
+
 html = ''
-with open('./html.txt') as f:
+with open(html_path) as f:
     html = f.read()
 
 def generate_files():
@@ -12,11 +16,11 @@ def generate_files():
 
     new_path = os.path.join(path, project_name + '/')
     path_resource = os.path.join(new_path, 'resource')
-    path_CSS = os.path.join(new_path_resource, 'CSS')
-    path_javaScript = os.path.join(new_path_resource, 'Script');
+    path_CSS = os.path.join(path_resource, 'CSS')
+    path_javaScript = os.path.join(path_resource, 'Script');
 
     os.mkdir(new_path)
-    os.mkdir(new_path_resource)
+    os.mkdir(path_resource)
     os.mkdir(path_CSS)
     os.mkdir(path_javaScript)
 
