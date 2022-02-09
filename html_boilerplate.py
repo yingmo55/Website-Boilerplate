@@ -9,8 +9,8 @@ with open(html_path) as f:
     html = f.read()
 
 def generate_files():
-    path = input(r'Please enter the path where you want to create your new files ')
-    project_name = input(r'Enter the project name ')
+    path = input(r'Please enter the path where you want to create your new files (hint:use shift + ins to paste if you are using a terminal such as git bash): ')
+    project_name = input(r'Enter the project name: ')
     if '\\' in path:
         path = path.replace('\\', '/')
 
